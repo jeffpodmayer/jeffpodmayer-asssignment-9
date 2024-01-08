@@ -1,4 +1,4 @@
-package com.coderscampus.a9.domain;
+package com.codercampus.a9.domain;
 
 public class Recipe {
 	private Integer cookingMinutes;

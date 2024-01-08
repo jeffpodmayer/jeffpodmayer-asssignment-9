@@ -1,17 +1,16 @@
-package com.coderscampus.a9.service;
+package com.codercampus.a9.service;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.StreamSupport;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.stereotype.Service;
 
-import com.coderscampus.a9.domain.Recipe;
+import com.codercampus.a9.domain.Recipe;
 
 @Service
 public class FileService {
@@ -36,11 +35,8 @@ public class FileService {
 					Boolean.parseBoolean(recipe.get(10)),
 					Boolean.parseBoolean(recipe.get(11))
 			);
-			
 			recipeList.add(newRecipe);
 		}
-		
-		
 		return recipeList;	
 	}
 }
