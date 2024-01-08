@@ -5,7 +5,7 @@ public class Recipe {
 	private Boolean dairyFree;
 	private Boolean glutenFree;
 	private String instructions;
-	private Double preparationMinutes;
+	private Double prepMinutes;
 	private Double pricePerServing;
 	private Integer readyInMinutes;
 	private Integer servings;
@@ -13,6 +13,23 @@ public class Recipe {
 	private String title;
 	private Boolean vegan;
 	private Boolean vegetarian;
+	
+	public Recipe (Integer cookingMinutes, Boolean dairyFree, Boolean glutenFree, String instructions, Double prepMinutes, 
+			Double pricePerServing, Integer readyInMinutes, Integer servings, Double spoonacularScore, String title, Boolean vegan, 
+			Boolean vegetarian) {
+		this.cookingMinutes = cookingMinutes;
+		this.dairyFree = dairyFree;
+		this.glutenFree = glutenFree;
+		this.instructions = instructions;
+		this.prepMinutes = prepMinutes;
+		this.pricePerServing = pricePerServing;
+		this.readyInMinutes = readyInMinutes;
+		this.servings = servings;
+		this.spoonacularScore = spoonacularScore;
+		this.title = title;
+		this.vegan = vegan;
+		this.vegetarian = vegetarian;	
+	}
 	public Integer getCookingMinutes() {
 		return cookingMinutes;
 	}
@@ -38,10 +55,10 @@ public class Recipe {
 		this.instructions = instructions;
 	}
 	public Double getPreparationMinutes() {
-		return preparationMinutes;
+		return prepMinutes;
 	}
 	public void setPreparationMinutes(Double preparationMinutes) {
-		this.preparationMinutes = preparationMinutes;
+		this.prepMinutes = preparationMinutes;
 	}
 	public Double getPricePerServing() {
 		return pricePerServing;
