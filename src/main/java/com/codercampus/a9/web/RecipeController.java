@@ -1,6 +1,5 @@
 package com.codercampus.a9.web;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,28 +16,33 @@ public class RecipeController {
 	RecipeService recipeService;
 
 	@GetMapping("/all-recipes")
-	public List<Recipe> showAllRecipes() throws IOException {
+	public List<Recipe> showAllRecipes() {
 		return recipeService.allRecipes();
 	}
 
 	@GetMapping("/gluten-free")
-	public List<Recipe> sortGlutenFree() throws IOException {
+	public List<Recipe> sortGlutenFree() {
 		return recipeService.getGlutenFreeRecipes();
 	}
 
 	@GetMapping("/vegan")
-	public List<Recipe> getVegan() throws IOException {
+	public List<Recipe> getVegan(){
 		return recipeService.getVeganRecipes();
 	}
 
 	@GetMapping("/vegan-and-gluten-free")
-	public List<Recipe> getVeganAndGlutenFree() throws IOException {
+	public List<Recipe> getVeganAndGlutenFree(){
 		return recipeService.getVeganAndGlutenFreeRecipes();
 	}
 
 	@GetMapping("/vegetarian")
-	public List<Recipe> getVegetarian() throws IOException {
+	public List<Recipe> getVegetarian(){
 		return recipeService.getVegetarianRecipes();
+	}
+	
+	@GetMapping("/dairy-free")
+	public List<Recipe> getDairyFree(){
+		return recipeService.getDairyFreeRecipes();
 	}
 
 }

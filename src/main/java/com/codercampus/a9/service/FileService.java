@@ -15,32 +15,30 @@ import com.codercampus.a9.domain.Recipe;
 @Service
 public class FileService {
 	List<Recipe> recipeList = new ArrayList<>();
-	
+
 	public List<Recipe> readFile() throws IOException {
 		Reader readRecipes = new FileReader("recipes.txt");
-		
-		Iterable<CSVRecord> recipes = CSVFormat.DEFAULT.withFirstRecordAsHeader()
-													   .withIgnoreSurroundingSpaces()
+
+		Iterable<CSVRecord> recipes = CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreSurroundingSpaces()
 													   .withEscape('\\')
 													   .parse(readRecipes);
-		
+
 		for (CSVRecord recipe : recipes) {
 			Recipe newRecipe = new Recipe(
-					Integer.parseInt(recipe.get(0)),
+					Integer.parseInt(recipe.get(0)), 
 					Boolean.parseBoolean(recipe.get(1)),
-					Boolean.parseBoolean(recipe.get(2)),
-					recipe.get(3),
+					Boolean.parseBoolean(recipe.get(2)), 
+					recipe.get(3), 
 					Double.parseDouble(recipe.get(4)),
-					Double.parseDouble(recipe.get(5)),
-					Integer.parseInt(recipe.get(6)),
+					Double.parseDouble(recipe.get(5)), 
+					Integer.parseInt(recipe.get(6)), 
 					Integer.parseInt(recipe.get(7)),
-					Double.parseDouble(recipe.get(8)),
-					recipe.get(9),
+					Double.parseDouble(recipe.get(8)), 
+					recipe.get(9), 
 					Boolean.parseBoolean(recipe.get(10)),
-					Boolean.parseBoolean(recipe.get(11))
-			);
+					Boolean.parseBoolean(recipe.get(11)));
 			recipeList.add(newRecipe);
 		}
-		return recipeList;	
+		return recipeList;
 	}
 }
