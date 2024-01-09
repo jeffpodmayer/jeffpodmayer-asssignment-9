@@ -18,7 +18,11 @@ public class FileService {
 	
 	public List<Recipe> readFile() throws IOException {
 		Reader readRecipes = new FileReader("recipes.txt");
-		Iterable<CSVRecord> recipes = CSVFormat.DEFAULT.withSkipHeaderRecord().withIgnoreSurroundingSpaces().parse(readRecipes);
+		
+		Iterable<CSVRecord> recipes = CSVFormat.DEFAULT.withFirstRecordAsHeader()
+													   .withIgnoreSurroundingSpaces()
+													   .withEscape('\\')
+													   .parse(readRecipes);
 		
 		for (CSVRecord recipe : recipes) {
 			Recipe newRecipe = new Recipe(
