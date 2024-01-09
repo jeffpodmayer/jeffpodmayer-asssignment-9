@@ -23,22 +23,22 @@ public class RecipeController {
 
 	@GetMapping("/gluten-free")
 	public List<Recipe> sortGlutenFree() throws IOException {
-		return recipeService.getGlutenFree();
+		return recipeService.getGlutenFreeRecipes();
 	}
 
 	@GetMapping("/vegan")
 	public List<Recipe> getVegan() throws IOException {
-		return recipeService.getVegan();
+		return recipeService.getVeganRecipes();
 	}
 
 	@GetMapping("/vegan-and-gluten-free")
 	public List<Recipe> getVeganAndGlutenFree() throws IOException {
-		return recipeService.getVeganAndGlutenFree();
+		return recipeService.getVeganAndGlutenFreeRecipes();
 	}
 
 	@GetMapping("/vegetarian")
 	public List<Recipe> getVegetarian() throws IOException {
-		return recipeService.getVegetarian();
+		return recipeService.getVegetarianRecipes();
 	}
 
 }
